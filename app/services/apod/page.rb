@@ -19,7 +19,7 @@ module APOD
     end
 
     def text
-      @html_document.css('p')[2].inner_html
+      @html_document.css('p')[2].inner_html.gsub(/(href="(?!http))/, '\1http://apod.nasa.gov/apod/')
     end
 
   end
