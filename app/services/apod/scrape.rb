@@ -3,7 +3,7 @@ module APOD
     def self.perform
       parsed_apod_page = ::APOD::Page.new
 
-      Astronomy::Picture.create!(
+      ::Astronomy::Picture.create!(
         url: parsed_apod_page.url,
         text: parsed_apod_page.text
       )
