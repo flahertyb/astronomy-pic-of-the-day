@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20141108070054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pictures", force: true do |t|
+  create_table "astronomy_pictures", force: true do |t|
     t.string   "url"
     t.text     "text"
     t.datetime "created_at"

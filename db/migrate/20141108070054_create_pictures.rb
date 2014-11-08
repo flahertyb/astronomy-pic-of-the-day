@@ -1,6 +1,6 @@
 class CreatePictures < ActiveRecord::Migration
   def change
-    create_table :pictures do |t|
+    create_table :astronomy_pictures do |t|
       t.string :url
       t.text :text
 
