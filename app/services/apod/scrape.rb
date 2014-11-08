@@ -5,7 +5,8 @@ module APOD
 
       ::Astronomy::Picture.create!(
         url: parsed_apod_page.url,
-        text: parsed_apod_page.text
+        text: parsed_apod_page.text,
+        apod_id: "apod-#{Date.today.strftime('%Y-%m-%d')}"
       )
     end
   end

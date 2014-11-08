@@ -6,7 +6,7 @@ module Astronomy
 
     desc 'get the pic of the day and related information'
     get do
-      present ::Astronomy::Picture.latest.as_json(only: [:url, :text])
+      present ::Astronomy::Picture.latest.as_json(only: [:url, :text, :apod_id])
     end
 
   end
