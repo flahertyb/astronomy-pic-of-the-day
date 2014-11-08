@@ -6,12 +6,7 @@ module Astronomy
 
     desc 'get the pic of the day and related information'
     get do
-      present (
-        {
-          'url' => 'placekitten.com/800/900',
-          'text' => 'Some text about the picture'
-        }
-      )
+      present Astronomy::Picture.latest.as_json(only: [:url, :text])
     end
 
   end
