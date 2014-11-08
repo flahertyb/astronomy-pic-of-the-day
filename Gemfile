@@ -10,3 +10,8 @@ gem 'nokogiri'
 gem 'hashie_rails'
 gem 'uglifier'
 gem 'rails_12factor'
+gem 'whenever', :require => false
+
+group :development do
+  gem 'pry'
+end
