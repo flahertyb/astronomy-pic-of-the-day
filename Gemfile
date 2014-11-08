@@ -11,6 +11,7 @@ gem 'hashie_rails'
 gem 'uglifier'
 gem 'rails_12factor'
 gem 'whenever', :require => false
+gem 'rack-cors'
 
 group :development do
   gem 'pry'
