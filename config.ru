@@ -13,4 +13,4 @@ use Rack::Cors do
   end
 end
 
-run Astronomy::Api
+run Astronomy::API
