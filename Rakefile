@@ -4,3 +4,10 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+desc "Get Latest APOD"
+task :get_latest_apod => :environment do
+  puts 'scraping apod page'
+  APOD::Scrape.perform
+  puts 'done scraping apod'
+end
