@@ -6,7 +6,11 @@ module Astronomy
 
     desc 'get the pic of the day and related information'
     get do
-      present ::Astronomy::Picture.latest.as_json(only: [:url, :explanation, :title, :apod_id])
+      picture_json = ::Astronomy::Picture.latest.as_json(only: [:url, :explanation, :title, :apod_id])
+
+      error!('No pictures found', 404) if picture_json.empty?
+
+      present picture_json
     end
 
   end
