@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141108191531) do
+ActiveRecord::Schema.define(version: 20141111035717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "astronomy_pictures", force: true do |t|
-    t.string   "url",        null: false
-    t.text     "text",       null: false
+    t.string   "url",         null: false
+    t.text     "text",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "apod_id",    null: false
+    t.string   "apod_id",     null: false
+    t.text     "explanation", null: false
+    t.string   "title"
   end
 
 end
