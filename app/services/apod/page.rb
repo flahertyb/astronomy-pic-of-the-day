@@ -7,6 +7,8 @@ module APOD
 
   class Page
 
+    include ActionView::Helpers
+
     def initialize(url=APOD_URL)
       @html_document = Nokogiri::HTML(open(url))
     end
@@ -16,6 +18,14 @@ module APOD
         attributes.detect { |attr| attr[1].name == 'src' }[1].value
 
       "#{APOD_ROOT}/#{uri}"
+    end
+
+    def explanation
+      sanitize(text, tags: ['a']).split('Explanation:')[1]
+    end
+
+    def title
+      @html_document.css('center')[1].css('b')[0].text
     end
 
     def text
